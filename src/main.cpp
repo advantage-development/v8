@@ -73,8 +73,8 @@ unsigned int nStakeMinAge = 1 * 30 * 60;
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in duffs) are considered zero fee (for relaying and mining)
- * We are ~100 times smaller then bitcredit now (2015-06-23), set minRelayTxFee only 10 times higher
- * so it's still 10 times lower comparing to bitcredit.
+ * Fees are currently tallied by SatoshisPerK, meaning X Satoshis per Kilobyte. (satoshis per 1000 bytes)
+ 	Currently fee rate is == minRelayTxFee = CFeeRate (100000000 satoshis flat per kilobyte)
  */
 CFeeRate minRelayTxFee = CFeeRate(100000000);
 
